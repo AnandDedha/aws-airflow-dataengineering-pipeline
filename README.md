@@ -1,9 +1,9 @@
 
-## Data Engineering project: Extracting Weather Data from OpenWeather, Storing in S3, and Loading into Redshift using Airflow
+#### Data Engineering project: Extracting Weather Data from OpenWeather, Storing in S3, and Loading into Redshift using Airflow
 
 In this project, we are creating a data pipeline in AWS using the airflow, python, spark, and AWS services. High-level architecture for the project
 
-We set up the whole architecture using infrastrcutre as code (IAC). After that we ste two airflow dag . In the first Airflow dag we extract the data using weatherAPI and load into s3 . here we have two tasks 
+We set up the whole architecture using infrastructure as code (IAC). After that, we set two airflow dags . In the first Airflow dag we extract the data using weatherAPI and load into s3 . here we have two tasks 
 
 ### task 1: Extract Data from OpenWeather API
 
