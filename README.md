@@ -1,25 +1,23 @@
 
 ## Data Engineering project AWS
 
-In this project, we are creating a data pipeline in AWS using the airflow, python, spark, and AWS services where we are extracting Weather Data from OpenWeather, Storing it in S3, and Loading it into Redshift using Airflow. High-level architecture for the project
+In this project, we're developing an AWS-based data pipeline utilizing airflow, python, spark, and AWS services. The objective is to extract Weather Data from OpenWeather, subsequently storing it in S3, and ultimately loading it into Redshift using the Airflow platform. The project's high-level architecture is as follows:
 
-We set up the whole architecture using infrastructure as code (IAC). After that, we set two airflow dags. 
+We've established the entire architecture through infrastructure as code (IAC) methodologies. Following that, we've configured two separate airflow directed acyclic graphs (DAGs).
 
-#### Set Up 1st Airflow DAG
-The DAG will include tasks to extract the data using weather API and load it into s3
+**Setting Up the First Airflow DAG:**
+This DAG encompasses tasks for data extraction via the weather API and subsequent loading into an S3 bucket.
 
-Task 1: Extract Data from OpenWeather API - Use a Python operator to extract weather data from the OpenWeather API. You are using libraries like `requests` to make API requests and retrieve the data.
+**Task 1:** Extracting Data from OpenWeather API: Utilizing a Python operator, we retrieve weather data from the OpenWeather API. This involves leveraging libraries such as "requests" to initiate API requests and obtain the required data.
 
-Task 2: Store Data in S3- Once the data is extracted, save it data frame and store it in an S3 bucket using  S3CreateObjectOperator. 
+**Task 2:** Storing Data in S3: After successfully extracting the data, we structure it within a data frame and then store it within an S3 bucket. This operation is executed using the S3CreateObjectOperator.
 
-#### Set Up 2nd Airflow DAG
-The DAG will include tasks for extracting data from s3, applying the transformation, and loading it into Redshift.
+**Setting Up the Second Airflow DAG:**
+This DAG includes tasks for extracting data from S3, applying transformations, and finally loading the processed data into Redshift.
 
-Task 1 - Wait for the first dag to complete
+**Task 1: Waiting for Completion of the First DAG:** Before proceeding, this task ensures that the first DAG has successfully completed its operations.
 
-Task 2 - ETL Data to Redshift using Glue Operator. This can be achieved using the GlueContext and Spark context
+**Task 2: ETL Processing to Redshift using Glue Operator:** This step involves employing the GlueContext and Spark context for Extract, Transform, Load (ETL) operations. The data, once transformed, is loaded into the Redshift database.
 
-
-### Conclusion
-
-By following these steps, you can create an ETL pipeline in AWS that extracts weather data from OpenWeather, stores it in S3, and loads it into Redshift using Apache Airflow and Glue operators. This pipeline ensures regular and automated updates of weather data in your Redshift database.
+**Conclusion:**
+By adhering to these outlined steps, a comprehensive ETL pipeline is established within AWS. This pipeline facilitates the extraction of weather data from OpenWeather, its storage within S3, and its subsequent loading into Redshift. The integration of Apache Airflow and Glue operators guarantees the automation of routine updates to the weather data in the Redshift database.
