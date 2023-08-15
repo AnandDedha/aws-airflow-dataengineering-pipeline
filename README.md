@@ -17,7 +17,7 @@ The DAG will include tasks for extracting data from s3, applying the transformat
 
 Task 1 - Wait for the first dag to complete
 
-Task 2 - ETL Data to Redshift using Glue Operator - This can be achieved using the GlueContext and Spark context
+Task 2 - ETL Data to Redshift using Glue Operator. This can be achieved using the GlueContext and Spark context
 
 
 ### Conclusion
